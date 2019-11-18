@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>devops</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>devops</name>
 	<description>Demo project for Spring Boot</description>
@@ -20,19 +20,19 @@
 		<java.version>11</java.version>
 	</properties>
 
-	<distributionManagement>
-		<repository>
-			<id>release</id>
-			<name>releases</name>
-			<url>http://localhost:8081/artifactory/libs-release-local</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshot</id>
-			<name>snapshots</name>
-			<url>http://localhost:8081/artifactory/libs-snapshot-local</url>
-		</snapshotRepository>
+<distributionManagement>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>DESKTOP-QRIVLRS-snapshots</name>
+        <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
+    <repository>
+        <id>central</id>
+        <name>DESKTOP-QRIVLRS-releases</name>
+        <url>http://localhost:8081/artifactory/libs-release-local</url>
+    </repository>
+</distributionManagement>
 
-	</distributionManagement>
 
 	<scm>
 		<connection>scm:git:git@github.com:user/project.git</connection>
@@ -88,13 +88,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-		</plugins>
-	</build>
-
-
-
-	<plugins>
-		<plugin>
+					<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-release-plugin</artifactId>
 			<configuration>
@@ -102,6 +96,11 @@
 				<autoVersionSubmodules></autoVersionSubmodules>
 			</configuration>
 		</plugin>
-	</plugins>
+			
+		</plugins>
+	</build>
+
+
+
 
 </project>
