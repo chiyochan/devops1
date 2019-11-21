@@ -13,6 +13,7 @@
 	<artifactId>devops</artifactId>
 	<packaging>war</packaging>
 	<name>devops</name>
+	<version>1.0.0</version>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
